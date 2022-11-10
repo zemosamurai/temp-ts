@@ -5,7 +5,7 @@ type OnOffPropsType = {
     callback: (value: boolean) => void
 }
 
-const OnOff = (props: OnOffPropsType) => {
+export const OnOff = (props: OnOffPropsType) => {
 
     const onStyle = {
         display: 'inline-block',
@@ -61,4 +61,3 @@ const OnOff = (props: OnOffPropsType) => {
 }
 
 
-export default OnOff
