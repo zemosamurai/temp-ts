@@ -1,6 +1,6 @@
 import React from "react";
 
-type OnOffPropsType = {
+export type OnOffPropsType = {
     value: boolean
     callback: (value: boolean) => void
 }
