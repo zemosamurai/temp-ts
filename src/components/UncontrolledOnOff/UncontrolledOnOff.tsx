@@ -1,11 +1,11 @@
 import React, {useState} from "react";
 
-type UncontrolledOnOffType = {
-    onChange: (on: boolean)=>void
+export type UncontrolledOnOffType = {
+    defaultValue?: boolean
 }
 
 export const UncontrolledOnOff = (props: UncontrolledOnOffType) => {
-    const[on, setOn] = useState(false)
+    const[on, setOn] = useState(props.defaultValue ? props.defaultValue : false)
 
     const onStyle = {
         display: 'inline-block',
@@ -43,13 +43,10 @@ export const UncontrolledOnOff = (props: UncontrolledOnOffType) => {
 
     const onClickHandler = () => {
         setOn(true)
-        props.onChange(true)
     }
 
     const offClickHandler = () => {
         setOn(false)
-        props.onChange(false)
-
     }
 
     return (
