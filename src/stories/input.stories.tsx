@@ -1,12 +1,10 @@
 import React, {ChangeEvent, useRef, useState} from 'react';
-import {ComponentMeta } from '@storybook/react';
 
-import { Header } from './Header';
 
 export default {
   title: 'input',
 
-} as ComponentMeta<typeof Header>;
+}
 
 export const UncontrolledInput = () => <input/>
 
