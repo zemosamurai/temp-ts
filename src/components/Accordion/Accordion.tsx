@@ -7,9 +7,6 @@ type ItemType = {
 
 export type AccordionPropsType = {
     titleValue: string
-    /**
-     * Value to draw AccordionBody
-     */
     collapsed: boolean
     callback: (collapsed: boolean) => void
     color?: string
@@ -29,8 +26,6 @@ export function Accordion(props: AccordionPropsType) {
                 color={props.color}
             />
             {!props.collapsed && <AccordionBody items={props.items} onClick={props.onClick}/>}
-            {/*тоже самое что и выше*/}
-            {/*{ props.collapsed === false && <AccordionBody/>}*/}
         </div>
     )
 }
