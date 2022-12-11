@@ -2,7 +2,6 @@ import React, {useState} from "react";
 
 export type UncontrolledAccordionPropsType = {
     titleValue: string
-    // collapsed: boolean
 }
 
 export type AccordionTitlePropsType = {
@@ -22,8 +21,6 @@ export function UncontrolledAccordion(props: UncontrolledAccordionPropsType) {
         <div>
             <AccordionTitle title={props.titleValue} callback={onClickButtonHandler}/>
             {!collapsed && <AccordionBody/>}
-            {/*тоже самое что и выше*/}
-            {/*{ props.collapsed === false && <AccordionBody/>}*/}
         </div>
     )
 }
