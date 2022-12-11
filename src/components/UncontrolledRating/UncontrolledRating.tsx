@@ -10,10 +10,6 @@ export type UncontrolledRatingPropsType = {
 export function UncontrolledRating(props: UncontrolledRatingPropsType) {
     const [value, setValue] = useState(props.defaultValue ? props.defaultValue : 0)
 
-    // const onClickButtonHandler = (star: number) => {
-    //     setValue(star)
-    // }
-
     return (
         <div>
             <Star selected={value > 0} callback={() => {setValue(1); props.onChange(1)}} />
@@ -32,8 +28,6 @@ type StarPropsType = {
 }
 
 function Star(props: StarPropsType) {
-    // return props.selected ? <span onClick={()=>props.callback(props.id)}><b>star </b></span> :
-    //     <span onClick={()=>props.callback(props.id)}>star </span>
     return (
         <span onClick={props.callback}>
             {props.selected ? <b>star </b> : 'star '}
