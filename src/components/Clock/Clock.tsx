@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from "react";
 
-import  './Clock.css'
+import s from './Clock.module.css'
 
 export type ClockPropsType = {
-    mode: boolean
+    mode: 'digital' | 'analog'
 }
 
 const get2digitsString = (num: number) => num < 10 ? '0' + num : num
@@ -35,19 +35,19 @@ export const Clock: React.FC<ClockPropsType> = (props) => {
         transform: `rotate(${date.getHours() * 30}deg)`
     };
 
-    return (
-        props.mode
-            ? <div>
-                <span>{hoursString}</span>
-                :
-                <span>{minutesString}</span>
-                :
-                <span>{secondsString}</span>
-            </div>
-            : <div className={"analog-clock"}>
-                <span className={"dial hours"} style={hoursStyle}></span>
-                <span className={"dial minutes"} style={minutesStyle}></span>
-                <span className={"dial seconds"} style={secondsStyle}></span>
-            </div>
-    )
+    const digitalJSX = <div>
+        <span>{hoursString}</span>
+        :
+        <span>{minutesString}</span>
+        :
+        <span>{secondsString}</span>
+    </div>
+    const analogJSX = <div className={s["analog-clock"]}>
+        <span className={`${s.dial} ${s.hours}`} style={hoursStyle}></span>
+        <span className={`${s.dial} ${s.minutes}`} style={minutesStyle}></span>
+        <span className={`${s.dial} ${s.seconds}`} style={secondsStyle}></span>
+    </div>
+
+    return props.mode === 'digital' ? digitalJSX : analogJSX
+
 }
